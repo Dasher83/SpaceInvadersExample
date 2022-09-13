@@ -17,4 +17,9 @@
         public const string LeftOuterBound = "LeftOuterBound";
         public const string ShipSpawnPoint = "ShipSpawnPoint";
     }
+
+    public static class Tags
+    {
+        public const string Player = "Player";
+    }
 }
