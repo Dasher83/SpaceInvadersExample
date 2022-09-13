@@ -29,11 +29,24 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    private void StartAtRandomPosition()
+    {
+        float leftLimit = GameObject.Find(Constants.GameObjects.LeftOuterBound).transform.position.x;
+        float rightLimit = GameObject.Find(Constants.GameObjects.RightOuterBound).transform.position.x;
+        float spriteWidthOffset = this.GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        float randomX = Random.Range(leftLimit + spriteWidthOffset, rightLimit - spriteWidthOffset);
+        this.transform.position = GameObject.Find(Constants.GameObjects.ShipSpawnPoint).transform.position;
+        Vector3 newPosition = this.transform.position;
+        newPosition.x = randomX;
+        this.transform.position = newPosition;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         maxSpeed = Constants.Ship.MaxSpeed;
         movementSpeed = Constants.Ship.DefaultMovementSpeed;
+        StartAtRandomPosition();
     }
 
     private void Update()

@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1191955
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
 --- !u!1001 &141564031
@@ -210,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.349207
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
@@ -257,8 +262,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
+--- !u!1 &412977480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412977481}
+  m_Layer: 0
+  m_Name: ShipSpawnPoint
+  m_TagString: Respawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412977481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412977480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.37, y: -3.42, z: -1.5850662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +449,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
 --- !u!1001 &1109253675
@@ -477,6 +522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
@@ -614,7 +664,7 @@ PrefabInstance:
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.754537
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
@@ -661,6 +711,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
 --- !u!1001 &1873726066886929558
@@ -683,7 +738,7 @@ PrefabInstance:
     - target: {fileID: 1873726066187587142, guid: 5754c9a288af82d41b2a42e2a8c903d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: -6.85
       objectReference: {fileID: 0}
     - target: {fileID: 1873726066187587142, guid: 5754c9a288af82d41b2a42e2a8c903d4,
         type: 3}
@@ -752,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.12
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 3183620672636309789, guid: 802769456962d8341a5b1d65fbaa823c,
         type: 3}
@@ -799,6 +854,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 3183620672636309790, guid: 802769456962d8341a5b1d65fbaa823c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802769456962d8341a5b1d65fbaa823c, type: 3}
 --- !u!1001 &5619866435087727174
@@ -821,7 +881,7 @@ PrefabInstance:
     - target: {fileID: 5619866434075120098, guid: c56682056ec2b4a4db1d95affe0a8555,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.42
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 5619866434075120098, guid: c56682056ec2b4a4db1d95affe0a8555,
         type: 3}
@@ -867,6 +927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Consumable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619866434075120103, guid: c56682056ec2b4a4db1d95affe0a8555,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c56682056ec2b4a4db1d95affe0a8555, type: 3}

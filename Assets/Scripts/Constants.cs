@@ -10,4 +10,11 @@
     {
         public const string Horizontal = "Horizontal";
     }
+
+    public static class GameObjects
+    {
+        public const string RightOuterBound = "RightOuterBound";
+        public const string LeftOuterBound = "LeftOuterBound";
+        public const string ShipSpawnPoint = "ShipSpawnPoint";
+    }
 }
