@@ -11,17 +11,14 @@ public class HealthBar : MonoBehaviour
     private float _current;
     public Image mask;
 
-    private const float DefaultMaximum = 10f;
-    private const float Minimum = 0f;
-
     public float Current
     {
         get { return _current; }
         set
         {
-            if (value < Minimum)
+            if (value < Constants.HealthBar.Minimum)
             {
-                _current = Minimum;
+                _current = Constants.HealthBar.Minimum;
                 return;
             }
             if (value > _maximum)
@@ -37,7 +34,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        _maximum = DefaultMaximum;
+        _maximum = Constants.HealthBar.DefaultMaximum;
         _current = _maximum;
     }
 

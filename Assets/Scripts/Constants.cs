@@ -26,5 +26,11 @@
     public static class HealthBar
     {
         public const float DefaultMaximum = 10f;
+        public const float Minimum = 0f;
+    }
+
+    public static class ScoreDisplay
+    {
+        public const float MaxScore = 1000000;
     }
 }

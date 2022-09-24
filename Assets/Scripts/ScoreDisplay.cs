@@ -6,10 +6,8 @@ public class ScoreDisplay : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
 
-    public const float MaxScore = 1000000;
-
     [SerializeField]
-    [Range(0, MaxScore)]
+    [Range(0, Constants.ScoreDisplay.MaxScore)]
     private float _score;
 
     public float Score
@@ -17,9 +15,9 @@ public class ScoreDisplay : MonoBehaviour
         get { return _score; }
         set
         {
-            if (value > MaxScore)
+            if (value > Constants.ScoreDisplay.MaxScore)
             {
-                _score = MaxScore;
+                _score = Constants.ScoreDisplay.MaxScore;
                 return;
             }
             if (value < 0)
