@@ -4,7 +4,8 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Test1",
-        "TestHealthBar"
+        "TestHealthBar",
+        "TestScoreDisplay"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
