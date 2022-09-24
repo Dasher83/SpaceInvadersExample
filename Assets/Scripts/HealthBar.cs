@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    [SerializeField]
     private float _maximum;
+    [SerializeField]
     private float _current;
     public Image mask;
 
