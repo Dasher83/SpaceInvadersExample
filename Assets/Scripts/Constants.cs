@@ -22,4 +22,9 @@
     {
         public const string Player = "Player";
     }
+
+    public static class HealthBar
+    {
+        public const float DefaultMaximum = 10f;
+    }
 }
