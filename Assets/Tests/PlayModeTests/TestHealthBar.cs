@@ -30,7 +30,9 @@ namespace Tests
             yield return null;
 
             float expectedFilled = _lives / _healthBar.GetComponent<HealthBar>().Maximum;
-            Assert.IsTrue(Mathf.Approximately(expectedFilled, _healthBar.GetComponent<HealthBar>().mask.fillAmount));
+            Assert.IsTrue(
+                Mathf.Approximately(expectedFilled, _healthBar.GetComponent<HealthBar>().mask.fillAmount),
+                $"Expected: {expectedFilled}. But instead was: {_healthBar.GetComponent<HealthBar>().mask.fillAmount}");
         }
 
         [UnityTest]
@@ -43,7 +45,9 @@ namespace Tests
             yield return null;
 
             float expectedFilled = 0f;
-            Assert.IsTrue(expectedFilled == _healthBar.GetComponent<HealthBar>().mask.fillAmount);
+            Assert.IsTrue(
+                expectedFilled == _healthBar.GetComponent<HealthBar>().mask.fillAmount,
+                $"Expected: {expectedFilled}. But instead was: {_healthBar.GetComponent<HealthBar>().mask.fillAmount}");
         }
 
         [UnityTest]
@@ -57,7 +61,9 @@ namespace Tests
             yield return null;
 
             float expectedFilled = 1f;
-            Assert.IsTrue(expectedFilled == _healthBar.GetComponent<HealthBar>().mask.fillAmount);
+            Assert.IsTrue(
+                expectedFilled == _healthBar.GetComponent<HealthBar>().mask.fillAmount,
+                $"Expected: {expectedFilled}. But instead was: {_healthBar.GetComponent<HealthBar>().mask.fillAmount}");
         }
 
         [UnityTest]
@@ -70,8 +76,10 @@ namespace Tests
             yield return null;
 
             float expected = 0f;
-            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().Current);
-            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().mask.fillAmount);
+            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().Current,
+                $"Expected: {expected}. But instead was: {_healthBar.GetComponent<HealthBar>().Current}");
+            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().mask.fillAmount,
+                $"Expected: {expected}. But instead was: {_healthBar.GetComponent<HealthBar>().mask.fillAmount}");
         }
 
         [UnityTest]
@@ -84,8 +92,11 @@ namespace Tests
             yield return null;
 
             float expected = _healthBar.GetComponent<HealthBar>().Maximum;
-            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().Current);
-            Assert.IsTrue(1f == _healthBar.GetComponent<HealthBar>().mask.fillAmount);
+            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().Current,
+                $"Expected: {expected}. But instead was: {_healthBar.GetComponent<HealthBar>().Current}");
+            expected = 1f;
+            Assert.IsTrue(expected == _healthBar.GetComponent<HealthBar>().mask.fillAmount,
+                $"Expected: {expected}. But instead was: {_healthBar.GetComponent<HealthBar>().mask.fillAmount}");
         }
     }
 }
