@@ -3,9 +3,11 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class ShipController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    private float maxSpeed;
+    [SerializeField]
+    private AudioSource _shootingSound;
+    private Rigidbody2D _rb;
+    private Vector2 _movement;
+    private float _maxSpeed;
 
     [SerializeField]
     private float movementSpeed;
@@ -13,9 +15,9 @@ public class ShipController : MonoBehaviour
     private float MovementSpeed { 
         get
         {
-            if(movementSpeed > maxSpeed)
+            if(movementSpeed > _maxSpeed)
             {
-                return maxSpeed;
+                return _maxSpeed;
             }
             return movementSpeed;
         } 
@@ -23,9 +25,9 @@ public class ShipController : MonoBehaviour
 
     private void LimitMoveSpeed()
     {
-        if (rb.velocity.magnitude > maxSpeed)
+        if (_rb.velocity.magnitude > _maxSpeed)
         {
-            rb.velocity = rb.velocity.normalized * (maxSpeed - ((Vector2)movement * MovementSpeed).magnitude);
+            _rb.velocity = _rb.velocity.normalized * (_maxSpeed - ((Vector2)_movement * MovementSpeed).magnitude);
         }
     }
 
@@ -43,8 +45,8 @@ public class ShipController : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        maxSpeed = Constants.Ship.MaxSpeed;
+        _rb = GetComponent<Rigidbody2D>();
+        _maxSpeed = Constants.Ship.MaxSpeed;
         movementSpeed = Constants.Ship.DefaultMovementSpeed;
         StartAtRandomPosition();
     }
@@ -52,12 +54,17 @@ public class ShipController : MonoBehaviour
     private void Update()
     {
         float moveHorizontal = Input.GetAxis(Constants.Axes.Horizontal);
-        movement = new Vector2(moveHorizontal, 0f);
+        _movement = new Vector2(moveHorizontal, 0f);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            _shootingSound.Play();
+        }
     }
 
     private void FixedUpdate()
     {
         LimitMoveSpeed();
-        rb.AddForce(movement * MovementSpeed);
+        _rb.AddForce(_movement * MovementSpeed);
     }
 }
