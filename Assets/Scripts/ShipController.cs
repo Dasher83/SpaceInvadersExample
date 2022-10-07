@@ -5,9 +5,14 @@ public class ShipController : MonoBehaviour
 {
     [SerializeField]
     private AudioSource _shootingSound;
+    [SerializeField]
+    private AudioSource _accelerating;
+    [SerializeField]
+    private AudioSource _slowingDown;
     private Rigidbody2D _rb;
     private Vector2 _movement;
-    private float _maxSpeed;
+    private float _maxSpeedSquared;
+    private float _previousSquaredSpeed;
 
     [SerializeField]
     private float movementSpeed;
@@ -15,9 +20,9 @@ public class ShipController : MonoBehaviour
     private float MovementSpeed { 
         get
         {
-            if(movementSpeed > _maxSpeed)
+            if(movementSpeed > _maxSpeedSquared)
             {
-                return _maxSpeed;
+                return _maxSpeedSquared;
             }
             return movementSpeed;
         } 
@@ -25,9 +30,9 @@ public class ShipController : MonoBehaviour
 
     private void LimitMoveSpeed()
     {
-        if (_rb.velocity.magnitude > _maxSpeed)
+        if (_rb.velocity.magnitude > _maxSpeedSquared)
         {
-            _rb.velocity = _rb.velocity.normalized * (_maxSpeed - ((Vector2)_movement * MovementSpeed).magnitude);
+            _rb.velocity = _rb.velocity.normalized * (_maxSpeedSquared - ((Vector2)_movement * MovementSpeed).magnitude);
         }
     }
 
@@ -46,8 +51,9 @@ public class ShipController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _maxSpeed = Constants.Ship.MaxSpeed;
+        _maxSpeedSquared = Constants.Ship.MaxSpeed * Constants.Ship.MaxSpeed;
         movementSpeed = Constants.Ship.DefaultMovementSpeed;
+        _previousSquaredSpeed = 0f;
         StartAtRandomPosition();
     }
 
@@ -60,6 +66,19 @@ public class ShipController : MonoBehaviour
         {
             _shootingSound.Play();
         }
+
+        if (_previousSquaredSpeed > _movement.sqrMagnitude && !_slowingDown.isPlaying)
+        {
+            _accelerating.Stop();
+            _slowingDown.Play();
+        }
+
+        if((_previousSquaredSpeed < _movement.sqrMagnitude || _movement.sqrMagnitude == _maxSpeedSquared) && !(_slowingDown.isPlaying && _accelerating.isPlaying))
+        {
+            _accelerating.Play();
+        }
+
+        _previousSquaredSpeed = _movement.sqrMagnitude;
     }
 
     private void FixedUpdate()
