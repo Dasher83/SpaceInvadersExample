@@ -10,6 +10,12 @@
     {
         public const float DefaultSpeed = 30f;
         public const float SpawnOffset = 0.75f;
+        public const float InitialBulletDamage = 1f;
+    }
+
+    public static class Obstacle
+    {
+        public const float InitialMaxDurability = 3f;
     }
 
     public static class Axes
