@@ -3,6 +3,8 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class ShipController : MonoBehaviour
 {
+    public GameObject bullet;
+
     [SerializeField]
     private AudioSource _shootingSound;
     [SerializeField]
@@ -57,13 +59,24 @@ public class ShipController : MonoBehaviour
         StartAtRandomPosition();
     }
 
+    private Vector3 BulletSpawnPosition
+    {
+        get
+        {
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.y += GetComponent<SpriteRenderer>().bounds.size.y * Constants.Bullet.SpawnOffset + Mathf.Epsilon;
+            return spawnPosition;
+        }
+    }
+
     private void Update()
     {
         float moveHorizontal = Input.GetAxis(Constants.Axes.Horizontal);
         _movement = new Vector2(moveHorizontal, 0f);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Instantiate(bullet, BulletSpawnPosition, transform.rotation);
             _shootingSound.Play();
         }
 

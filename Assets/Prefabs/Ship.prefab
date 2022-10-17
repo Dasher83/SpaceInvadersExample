@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4291539b37f1f54d9279805590030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 2718816284106321896, guid: a9f4214bb0d8b8e47b681ae6a45f38a2, type: 3}
   _shootingSound: {fileID: 1873726066886929560}
   _accelerating: {fileID: 1873726066886929562}
   _slowingDown: {fileID: 1873726066886929561}

@@ -6,6 +6,12 @@
         public const float MaxSpeed = 10f;
     }
 
+    public static class Bullet
+    {
+        public const float DefaultSpeed = 30f;
+        public const float SpawnOffset = 0.75f;
+    }
+
     public static class Axes
     {
         public const string Horizontal = "Horizontal";
